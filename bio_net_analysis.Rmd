@@ -7,3 +7,27 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Practice data
+```{r}
+cwd <- demoSimpleGraph()
+
+layoutNetwork( cwd, 'force-directed')
+
+possible.layout.names <- getLayoutNames(cwd)
+layoutNetwork (cwd, possible.layout.names[1])
+
+ping(cwd)
+```
+
+Interact with cytoscape to change visuals - TEST
+
+```{r}
+setVisualStyle(cwd, "Marquee")
+
+styles <- getVisualStyleNames(cwd)
+styles
+
+setVisualStyle(cwd, styles[13])
+setVisualStyle(cwd, styles[11])
+```
+
