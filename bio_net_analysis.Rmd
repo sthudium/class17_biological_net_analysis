@@ -250,3 +250,24 @@ displayGraph(cw2)
 layoutNetwork(cw2)
 ```
 
+Select specific nodes
+```{r}
+selectNodes(cw2, "GQ377772") 
+getSelectedNodes(cw2)
+
+selectFirstNeighborsOfSelectedNodes(cw2)
+getSelectedNodes(cw2)
+
+selectFirstNeighborsOfSelectedNodes(cw2)
+getSelectedNodes(cw2)
+```
+
+Create a new network from this selection
+```{r}
+newnet <- createWindowFromSelection(cw2,
+                                    "subnet",
+                                    "TRUE")
+
+layoutNetwork(newnet, "force-directed")
+```
+
